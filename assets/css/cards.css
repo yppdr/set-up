@@ -1,0 +1,1 @@
+:root{--bg:ghostwhite;--card-bg:#041221}body{background:var(--bg)}.box{background:var(--card-bg)}input::placeholder{color:antiquewhite}.navbar{background:var(--card-bg)}.navbar-item{color:ghostwhite}.card{overflow:hidden;background:ghostwhite}.card.large{border-radius:5px}.title.no-padding{margin-bottom:0!important}

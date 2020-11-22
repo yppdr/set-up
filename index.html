@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Set'Up - Partage ton setup</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="/assets/css/cards.css">
+
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" />
+
+    <meta name="title" content="Set'Up - Partage ton setup">
+    <meta name="description" content="Grace a Set'Up, partage ton setup rapidement avec la communauté ! ">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://piotpilot.eu">
+    <meta property="og:title" content="Set'Up - Partage ton setup">
+    <meta property="og:description" content="Grace a Set'Up, partage ton setup rapidement avec la communauté ! ">
+    <meta property="og:image" content="/assets/img/meta.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://piotpilot.eu">
+    <meta property="twitter:title" content="Set'Up - Partage ton setup">
+    <meta property="twitter:description" content="Grace a Set'Up, partage ton setup rapidement avec la communauté ! ">
+    <meta property="twitter:image" content="/assets/img/meta.jpg">
+
+  </head>
+
+  <body>
+
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="/assets/img/logo.png" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item">
+              Home
+            </a>
+            <a class="navbar-item">
+              Partager mon setup
+            </a>
+            <a class="navbar-item">
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- /NAV -->
+
+    <div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" >Les setups déjà partagé</h1><br>
+          </div>
+        </div>
+        <div id="app" class="row columns is-multiline">
+          <div v-for="card in cardData" key="card.id" class="column is-4">
+            <div class="card large">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img :src="card.image" alt="Image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img :src="card.avatar" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4 no-padding">{{card.user.title}}</p>
+                    <p>
+                      <span class="title is-6">
+                        <a :href=`${card.user.link}`> {{card.user.linkname}} </a> </span> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+           <!-- 
+               @Todo : A voir si je met ca ou pas 
+          <div class="soc">
+            <a href="#"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+          </div>
+          -->
+          <p>
+            <strong>Set'Up</strong> by <a href="http://piotpilot.eu">Yannis Piot Pilot</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="/assets/js/cardsData.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          cardData: cardsData
+        }
+      })
+
+    </script>
+  </body>
+
+</html>
